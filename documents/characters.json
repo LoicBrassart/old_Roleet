@@ -1,0 +1,110 @@
+[
+  {
+    "name": "Sylvanas Windrunner",
+    "avatar": "https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fkalimdor.files.wordpress.com%2F2013%2F01%2Fsylvanas_chenbo.jpg&f=1",
+    "baseline": "... No turning back.",
+    "tags": ["Horde", "Undead", "Main Character"],
+    "fluffs": [
+      {
+        "title": "Background",
+        "content": "Sylvanas was a Night Elf and captain of the Defense Force of her lands. She got killed by Arthas on his way to the Silverymoon. She was then risen back from the dead by him to serve under him. She managed to free herself and became the Queen of the Undead."
+      },
+      {
+        "title": "Behaviour",
+        "content": "She's a bit cold, to be honest. She gives quite the tongue-lashing when you try and speak to her."
+      }
+    ],
+    "characterSheets": [],
+    "author": "5ce422a27cb10713d71ed9c0"
+  },
+  {
+    "name": "Thrall",
+    "avatar": "https://vignette.wikia.nocookie.net/wow/images/b/b9/Thrall_WarCraft_.jpg/revision/latest?cb=20141020005607&path-prefix=fr",
+    "baseline": "Only true leader of the Horde. Lorem ipsum dolor sit amet, non conequitur blablabla bla.",
+    "tags": ["Horde", "Orc", "Main Character"],
+    "fluffs": [
+      {
+        "title": "Background",
+        "content": "Separated from his parents a few days after his birth, he got cursed by Gul'Dan to save his life as a baby. Soon orphaned, he was left to his own destiny in a basket thrown in a river.Separated from his parents a few days after his birth, he got cursed by Gul'Dan to save his life as a baby. Soon orphaned, he was left to his own destiny in a basket thrown in a river."
+      },
+      {
+        "title": "Description",
+        "content": "Well, as a Fel-cursed Orc, Thrall is mainly green. Quite bulky even for an Orc, he owes his constitution to his own family and not to his career, as he very early discovered that he's a Shaman at heart."
+      },
+      {
+        "title": "Behaviour",
+        "content": "Although one could think a Fel-cursed Orc must be a violent bastard, Thrall is especially respected among his people for his temper and his intelligence."
+      },
+      {
+        "title": "Fight Style",
+        "content": "Thrall does not fight anymore, too concerned about the welfare of Azeroth in it's globality to take part in petty skirmishes."
+      }
+    ],
+    "characterSheets": [
+      {
+        "gameSystem": "Dungeons & Dragons 3.5"
+      }
+    ],
+    "author": "5ce422a27cb10713d71ed9c0"
+  },
+  {
+    "name": "Scene",
+    "avatar": "https://i.redd.it/fgqefj3vw1921.jpg",
+    "baseline": "In a few decades, you'll be nothing but a bit of dust, while I'll be celebrated as a legend.",
+    "tags": ["Tiefling", "Bard", "Warrior"],
+    "fluffs": [
+      {
+        "title": "Background",
+        "content": "Scene tells a lot of tales about her past, but it's very difficult to know if she ever told anything true about her."
+      },
+      {
+        "title": "Description",
+        "content": "Scene is beautiful, knows it perfectly well, and she doesn't hesiitate to play her cards right about it. She often wears quite flashy clothes to be sure everybody in the vicinity knows she's around."
+      },
+      {
+        "title": "Behaviour",
+        "content": "Full of herself and easy-going, she always has a good pun to alleviate a difficult situation or lift an ally's spirit, or just the right insult to make an enemy lose theiir temper."
+      },
+      {
+        "title": "Fight Style",
+        "content": "Although her musical inclinations seem to indicate Scene is not a fighter, many foes falled under her swordplay. Inspired by ancient skalds' tales, she always takes some time to train properly, wanting to be celebrated both as a gifted musician and as a ferocious fighter."
+      }
+    ],
+    "characterSheets": [
+      {
+        "gameSystem": "Dungeons & Dragons 3.5"
+      }
+    ],
+    "author": "5ce422a27cb10713d71ed9c0"
+  },
+  {
+    "name": "Laekh",
+    "avatar": "https://i.pinimg.com/236x/63/80/f3/6380f3499a85eb88e371a757f1e7c1f6.jpg",
+    "baseline": "ROOAAARRRR !!!!!! FOR KROM !!!",
+    "tags": ["Dwarf", "Berserker"],
+    "fluffs": [
+      {
+        "title": "Background",
+        "content": "LAEKH NOT SPEAKING !!."
+      },
+      {
+        "title": "Description",
+        "content": "Laekh is a blond dwarf (which is quite hard to tell, since he doesn't wash and avoids rain), about four feet tall."
+      },
+      {
+        "title": "Behaviour",
+        "content": "He makes everyone cringe,  either when he speaks or when they smell him."
+      },
+      {
+        "title": "Fight Style",
+        "content": "Take any object, determine which end of it is the deadlier, apply with care (and FORCE !) to the face of the enemy (or any other squishy part, really)."
+      }
+    ],
+    "characterSheets": [
+      {
+        "gameSystem": "Dungeons & Dragons 3.5"
+      }
+    ],
+    "author": "5ce422a27cb10713d71ed9c0"
+  }
+]
