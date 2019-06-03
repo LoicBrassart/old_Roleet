@@ -1,0 +1,46 @@
+/* -------------------------------------------- Basic tags */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Coda", cursive;
+  background-color: black;
+  color: white;
+  line-height: 20px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Coda Caption", sans-serif;
+}
+
+h1 {
+  font-size: 1.3rem;
+}
+h2 {
+  font-size: 1.2rem;
+}
+h3 {
+  font-size: 1.1rem;
+}
+a,
+a:active,
+a:focus {
+  outline: none;
+}
+/* -------------------------------------------- Helper classes */
+.wip {
+  border: 1px dotted green;
+}
+.flexer {
+  display: flex;
+  flex-flow: row wrap;
+}
+.center {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}

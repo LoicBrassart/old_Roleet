@@ -1,0 +1,39 @@
+.Character {
+  width: 290px;
+  margin: 10px;
+  color: black;
+
+  .ui.move.reveal {
+    width: 290px;
+    white-space: normal;
+  }
+
+  .ui.card {
+    height: 420px;
+  }
+
+  .imgwrapper {
+    overflow: hidden;
+    height: 50%;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .ui.labeled.icon.menu .item {
+    width: 33.3333%;
+    font-size: 0.8em;
+    padding: 6px 2px;
+  }
+
+  .ui.pointing.menu {
+    cursor: pointer;
+  }
+
+  .ui.tab {
+    height: 320px;
+    overflow-y: auto;
+  }
+}
