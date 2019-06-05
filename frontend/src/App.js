@@ -7,6 +7,7 @@ import RoleetBar from "./components/RoleetBar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Characters from "./pages/Characters";
+import Scenarii from "./pages/Scenarii";
 
 const App = () => (
   <div className="App">
@@ -16,6 +17,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/characters" component={Characters} />
+        <Route exact path="/scenarii" component={Scenarii} />
       </Switch>
     </div>
     <Footer />
