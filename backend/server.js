@@ -18,6 +18,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/character", require("./routes/character"));
+app.use("/scenario", require("./routes/scenario"));
 app.use("/user", require("./routes/user"));
 
 /* --------------------------------------------------------------------- Private Routes */

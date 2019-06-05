@@ -1,5 +1,5 @@
 const { db } = require("../conf");
-const { Character, User } = require("../models/models");
+const { Character, User, Scenario } = require("../models/models");
 
 let data;
 
@@ -27,6 +27,20 @@ data.map(charData => {
       return;
     }
     console.log(`Character recorded: ${charData.name}`);
+  });
+  return;
+});
+
+data = require("../../documents/scenarii.json");
+db.dropCollection("scenarios");
+data.map(scenData => {
+  const newChar = new Scenario(scenData);
+  newChar.save(err => {
+    if (err) {
+      console.error(`Failure for Scenario ${scenData.title}: ${err}`);
+      return;
+    }
+    console.log(`Scenario recorded: ${scenData.title}`);
   });
   return;
 });
