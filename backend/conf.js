@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
-let CONFIG = {}; //Make this global to use all over the application
+let CONFIG = {};
 
 CONFIG.portNumber = process.env.PORT || "5050";
 CONFIG.dbDialect = process.env.DB_DIALECT || "mysql";
@@ -14,6 +14,6 @@ const dbUrl = `mongodb://${CONFIG.dbHost}:${CONFIG.dbPortNumber}/${
   CONFIG.dbName
 }`;
 mongoose.connect(dbUrl, { useNewUrlParser: true });
-// let db = mongoose.connection;
+CONFIG.db = mongoose.connection;
 
 module.exports = CONFIG;
