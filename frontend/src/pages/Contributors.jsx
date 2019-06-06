@@ -28,6 +28,7 @@ const Contributors = () => (
       <li>
         Christine Brassart
         <ul>
+          <li>Proposition de l'outil Figma pour le prototypage</li>
           <li>"Canard en plastique" de fin de journée (Merci la frangine !)</li>
         </ul>
       </li>
