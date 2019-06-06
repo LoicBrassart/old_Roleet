@@ -1,6 +1,5 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import "semantic-ui-css/semantic.min.css";
 import "./App.scss";
 import SenBar from "./components/SenBar";
 import RoleetBar from "./components/RoleetBar";

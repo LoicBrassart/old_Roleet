@@ -23,6 +23,10 @@ const Contributors = () => (
         Benjamin Beugnet
         <ul>
           <li>Refonte cartes Personnages sans Semantic-UI</li>
+          <li>
+            M'écouter rager sur l'intégration des cartes Personnages sans
+            Semantic-UI
+          </li>
         </ul>
       </li>
       <li>
