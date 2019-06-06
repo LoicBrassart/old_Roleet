@@ -22,13 +22,12 @@ const Characters = () => {
 
   return (
     <div className="Characters">
+      <Title label="Personnages" />
       <main>
-        <Title label="Personnages" />
         {charactersData.map((char, i) => (
           <Character key={i} charData={char} />
         ))}
       </main>
-      <aside />
     </div>
   );
 };

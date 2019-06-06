@@ -1,5 +1,4 @@
 import React from "react";
-import { Reveal, Image, Card, Label, List, Tab } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 import "./styles/Character.scss";
@@ -7,11 +6,33 @@ import "./styles/Character.scss";
 class Character extends React.Component {
   render() {
     const char = this.props.charData;
-    const panes = [
-      {
-        menuItem: "Description",
-        render: () => (
-          <Tab.Pane>
+    return (
+      <section className="Character">
+        <img src={char.avatar} alt={char.name} />
+        <article>
+          <h2>{char.name}</h2>
+          <p>{char.baseline}</p>
+          <aside>
+            {char.tags.map((tag, i) => {
+              return <a key={i}>{tag}</a>;
+            })}
+          </aside>
+        </article>
+
+        <aside>
+          <nav>
+            <button
+              type="button"
+              className="buttonSelected descriptionButton cardButton"
+            >
+              Description <span />
+            </button>
+            <button type="button" className="sheetsButton cardButton">
+              Sheets <span />
+            </button>
+          </nav>
+
+          <article className="descriptionArticle articleSelected">
             {char.fluffs.map((fluff, i) => {
               return (
                 <React.Fragment key={i}>
@@ -20,55 +41,21 @@ class Character extends React.Component {
                 </React.Fragment>
               );
             })}
-          </Tab.Pane>
-        )
-      },
-      {
-        menuItem: "Sheets",
-        render: () => (
-          <Tab.Pane>
-            <List>
+          </article>
+
+          <article className="sheetsArticle">
+            <ul>
               {char.characterSheets.map((sheet, i) => {
                 return (
-                  <List.Item key={i}>
+                  <li key={i}>
                     <Link to="/">{sheet.gameSystem}</Link>
-                  </List.Item>
+                  </li>
                 );
               })}
-            </List>
-          </Tab.Pane>
-        )
-      }
-    ];
-
-    return (
-      <div className="Character">
-        <Reveal animated="move">
-          <Reveal.Content visible>
-            <Card>
-              <div className="imgwrapper">
-                <Image src={char.avatar} alt={char.name} />
-              </div>
-              <Card.Content>
-                <Card.Header>{char.name}</Card.Header>
-                <Card.Description>{char.baseline}</Card.Description>
-              </Card.Content>
-              <Card.Content extra>
-                {char.tags.map((tag, i) => {
-                  return <Label key={i}>{tag}</Label>;
-                })}
-              </Card.Content>
-            </Card>
-          </Reveal.Content>
-          <Reveal.Content hidden>
-            <Card>
-              <Card.Content>
-                <Tab panes={panes} />
-              </Card.Content>
-            </Card>
-          </Reveal.Content>
-        </Reveal>
-      </div>
+            </ul>
+          </article>
+        </aside>
+      </section>
     );
   }
 }

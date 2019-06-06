@@ -1,6 +1,10 @@
 .Characters {
-  padding: 20px;
+  width: 100%;
+  padding: 150px 2%;
 
-  display: flex;
-  justify-content: flex-start;
+  main {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
 }
