@@ -3,7 +3,6 @@ import axios from "axios";
 import "./styles/Scenarii.scss";
 import Title from "../components/Title";
 import Scenario from "../components/Scenario";
-import ScenarioSearchFilter from "../components/ScenarioSearchFilter";
 
 const Scenarii = () => {
   // Replaces state
@@ -30,9 +29,6 @@ const Scenarii = () => {
             <Scenario key={i} scenData={scenario} />
           ))}
         </main>
-        <aside>
-          <ScenarioSearchFilter />
-        </aside>
       </div>
     </div>
   );
