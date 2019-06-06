@@ -6,7 +6,10 @@ const RoleetBar = () => (
   <nav className="RoleetBar flexer">
     <div className="logo center">
       <NavLink exact to="/" activeClassName="">
-        <h1>Roleet</h1>
+        <div>
+          <img src="/img/logo.svg" alt="" />
+          <h1>Roleet</h1>
+        </div>
         <p>May the Dice be with you !</p>
       </NavLink>
     </div>
