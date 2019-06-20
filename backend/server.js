@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const passport = require("passport");
 
 const { portNumber } = require("./conf");
 
@@ -9,7 +10,7 @@ const { portNumber } = require("./conf");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
-
+app.use(passport.initialize());
 /* --------------------------------------------------------------------- Public Routes */
 app.get("/", (req, res) => {
   const msg = "Welcome on Roleet!";
@@ -17,6 +18,7 @@ app.get("/", (req, res) => {
   res.status(200).send(msg);
 });
 
+app.use("/auth", require("./routes/auth"));
 app.use("/character", require("./routes/character"));
 app.use("/scenario", require("./routes/scenario"));
 app.use("/user", require("./routes/user"));
