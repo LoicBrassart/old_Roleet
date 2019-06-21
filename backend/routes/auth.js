@@ -53,7 +53,7 @@ router.get(
   "/testAuth",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    console.log(req);
+    res.status(200).send(`Welcome ${req.user.pseudo}, you're logged in !`);
   }
 );
 
