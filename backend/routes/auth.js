@@ -22,15 +22,8 @@ router.post("/signup", (req, res) => {
   });
 });
 
-router.post(
-  "/login",
-  passport.authenticate("local", { session: false }),
-  (req, res, next) => {
-    console.log("Post-auth");
-    next();
-  },
-
-  (err, user, info) => {
+router.post("/login", (req, res) => {
+  passport.authenticate("local", { session: false }, (err, user, info) => {
     if (err || !user) {
       // User not logged in (inexistant or tech error)
       return res.status(401).json({
@@ -49,9 +42,18 @@ router.post(
           loginErr
         });
       }
+      user.password = undefined;
       const token = jwt.sign(user, jwtSecret);
       return res.status(200).json({ user, token });
     });
+  })(req, res);
+});
+
+router.get(
+  "/testAuth",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    console.log(req);
   }
 );
 

@@ -15,17 +15,20 @@ passport.use(
       criteria = {
         email: mail
       };
-      User.findOne({ email: mail }, (err, user) => {
-        if (err) return done(err);
-        if (!user) return done(null, false, { message: "User not found!" });
-        bcrypt.compare(password, user.password, (errBcrypt, result) => {
-          if (errBcrypt) return done(errBcrypt);
-          if (!result)
-            return done(null, false, { message: "Incorrect password!" });
-          return done(null, user);
+      User.findOne({ email: mail })
+        .lean()
+        .then(user => {
+          if (!user) return done(null, false, { message: "User not found!" });
+          bcrypt.compare(password, user.password, (errBcrypt, result) => {
+            if (errBcrypt) return done(errBcrypt);
+            if (!result)
+              return done(null, false, { message: "Incorrect password!" });
+            return done(null, user);
+          });
+        })
+        .catch(err => {
+          return done(err);
         });
-        return done(null, false, { message: "You shouldn't be there!" });
-      });
     }
   )
 );
