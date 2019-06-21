@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const passport = require("passport");
 const { User } = require("../models/User");
 
 router.get("/", (req, res) => {
@@ -42,39 +43,35 @@ router.get("/:id", (req, res) => {
 });
 
 /* --------------------------------------------------------------------- Private Routes */
-router.post("/", (req, res) => {
-  const data = req.body;
-  const newUser = new User(data);
-  newUser.save(err => {
-    if (err) {
-      console.error("Failure! " + err);
-      return res.status(400).send("Invalid User creation request");
-    }
-    return res.status(201).send(data);
-  });
-});
+router.put(
+  "/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    const id = req.params.id;
+    const data = req.body;
+    Character.findByIdAndUpdate(id, data, { new: true }, err => {
+      if (err) {
+        console.error("Failure! " + err);
+        return res.status(400).send("Invalid Character update request");
+      }
+      return res.status(200).send(data);
+    });
+  }
+);
 
-router.put("/:id", (req, res) => {
-  const id = req.params.id;
-  const data = req.body;
-  Character.findByIdAndUpdate(id, data, { new: true }, err => {
-    if (err) {
-      console.error("Failure! " + err);
-      return res.status(400).send("Invalid Character update request");
-    }
-    return res.status(200).send(data);
-  });
-});
-
-router.delete("/:id", (req, res) => {
-  const id = req.params.id;
-  Character.findByIdAndRemove(id, err => {
-    if (err) {
-      console.error("Failure! " + err);
-      return res.status(400).send("Invalid Character deletion request");
-    }
-    return res.sendStatus(204);
-  });
-});
+router.delete(
+  "/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    const id = req.params.id;
+    Character.findByIdAndRemove(id, err => {
+      if (err) {
+        console.error("Failure! " + err);
+        return res.status(400).send("Invalid Character deletion request");
+      }
+      return res.sendStatus(204);
+    });
+  }
+);
 
 module.exports = router;
