@@ -106,5 +106,59 @@
       }
     ],
     "author": "5ce422a27cb10713d71ed9c0"
+  },
+  {
+    "name": "Vol'Jin",
+    "avatar": "https://vignette.wikia.nocookie.net/wowwiki/images/5/56/Vol_jin_by_rinacane-d7vdj8i.jpg/revision/latest?cb=20150502181804",
+    "baseline": "Then, my friend, let the songs be sung as Zandalari lamentations. Let them be sung for a thousand generations and serenade us into eternity.",
+    "tags": ["Troll", "Hunter"],
+    "fluffs": [
+      {
+        "title": "Fate",
+        "content": "Vol'jin died not so long ago. Just before this event, he gathered all Horde leaders and nominated Sylvanas Windrunner as his successor."
+      }
+    ],
+    "characterSheets": [
+      {
+        "gameSystem": "Dungeons & Dragons 3.5"
+      }
+    ],
+    "author": "5ce422a27cb10713d71ed9c0"
+  },
+  {
+    "name": "Uther Lightbringer",
+    "avatar": "https://vignette.wikia.nocookie.net/wow/images/7/7b/Uther_le_Porteur_de_Lumi%C3%A8re.jpg/revision/latest?cb=20150512220837&path-prefix=fr",
+    "baseline": "Lad, no one feels ready. No one feels that he deserves it. And you know why? Because no one does. It is grace, pure and simple. We are inherently unworthy, simply because we are human, and all human beings--aye, and elves, and dwarves, and all the other races--are flawed.",
+    "tags": ["Human", "Paladin", "Alliance"],
+    "fluffs": [
+      {
+        "title": "Fate",
+        "content": "Uther was killed by Arthas Menethil when he was searching to revive Kel'Thuzad."
+      }
+    ],
+    "characterSheets": [
+      {
+        "gameSystem": "Dungeons & Dragons 3.5"
+      }
+    ],
+    "author": "5ce422a27cb10713d71ed9c0"
+  },
+  {
+    "name": "Valeera Sanguinar",
+    "avatar": "https://gamepedia.cursecdn.com/wowpedia/7/75/Valeera_HoW.png",
+    "baseline": "Respect my people, or pay the price!",
+    "tags": ["Blood Elf", "Thief", "Horde"],
+    "fluffs": [
+      {
+        "title": "Trivia",
+        "content": "- Her surname is derived from the Latin word sanguis, meaning 'blood'."
+      }
+    ],
+    "characterSheets": [
+      {
+        "gameSystem": "Dungeons & Dragons 3.5"
+      }
+    ],
+    "author": "5ce422a27cb10713d71ed9c0"
   }
 ]
