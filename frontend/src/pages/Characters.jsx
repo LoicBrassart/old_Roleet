@@ -4,32 +4,38 @@ import "./styles/Characters.scss";
 import Character from "../components/Character";
 import Title from "../components/Title";
 
-const Characters = () => {
-  // Replaces state
-  const [charactersData, setCharactersData] = useState([]);
-
-  // Replaces componentDidMount and componentDidUpdate
-  useEffect(() => {
+class Characters extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      charactersData: []
+    };
+  }
+  componentDidMount() {
     axios
       .get("http://localhost:5050/character")
       .then(({ data }) => {
-        setCharactersData(data);
+        this.setState({
+          charactersData: data
+        });
       })
       .catch(err => {
         console.log("couldn't fetch: " + err);
       });
-  }, []); // <- This empty array disables automatic updates
+  }
 
-  return (
-    <div className="Characters">
-      <Title label="Personnages" />
-      <main>
-        {charactersData.map((char, i) => (
-          <Character key={i} charData={char} />
-        ))}
-      </main>
-    </div>
-  );
-};
+  render() {
+    return (
+      <div className="Characters">
+        <Title label="Personnages" />
+        <main>
+          {this.state.charactersData.map((char, i) => (
+            <Character key={i} charData={char} />
+          ))}
+        </main>
+      </div>
+    );
+  }
+}
 
 export default Characters;
