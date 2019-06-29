@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import modalActions from "../redux/modalActions";
+import modalActions from "../redux/actions/modalActions";
 
 const Modal = ({ dispatch, isOpen }) => (
   <div>
@@ -30,6 +30,6 @@ const Modal = ({ dispatch, isOpen }) => (
   </div>
 );
 const mapStateToProps = store => ({
-  isOpen: store.isOpen
+  isOpen: store.modal.isOpen
 });
 export default connect(mapStateToProps)(Modal);

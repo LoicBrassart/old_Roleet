@@ -1,4 +1,4 @@
-import modalActions from "./modalActions";
+import modalActions from "../actions/modalActions";
 
 const initial = {
   isOpen: false
