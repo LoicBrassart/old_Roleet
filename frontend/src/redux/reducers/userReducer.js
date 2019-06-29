@@ -11,12 +11,12 @@ export default (state = initial, action) => {
     case userActions.USER_LOGIN.type:
       return {
         ...state,
-        loggedIn: true,
+        isLoggedIn: true,
         token: action.token,
         data: action.user
       };
     case userActions.USER_LOGOUT.type:
-      return { ...state };
+      return initial;
     default:
       return state;
   }
