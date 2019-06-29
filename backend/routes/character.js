@@ -4,7 +4,6 @@ const passport = require("passport");
 const { Character } = require("../models/models");
 
 router.get("/", (req, res) => {
-  console.log(`Fetched page #${req.query.page}`);
   let criteria = {};
 
   // Search by one specific field

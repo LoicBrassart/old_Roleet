@@ -38,24 +38,16 @@ class Characters extends React.Component {
   }
 
   render() {
-    /*
-        <main>
-          {this.state.charactersData.map((char, i) => (
-            <Character key={i} charData={char} />
-          ))}
-        </main>
-    
-    */
     return (
       <div className="Characters">
         <Title label="Personnages" />
         <InfiniteScroll
-          dataLength={this.state.charactersData.length} //This is important field to render the next data
+          dataLength={this.state.charactersData.length}
           next={() => {
             this.fetchMoreCharacters();
           }}
           hasMore={this.state.api.hasMore}
-          loader={<h4>Loading...</h4>}
+          loader={<h4>Une minute stp...</h4>}
           endMessage={
             <p style={{ textAlign: "center" }}>
               <b>
