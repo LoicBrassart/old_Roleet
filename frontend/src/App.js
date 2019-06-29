@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import Characters from "./pages/Characters";
 import Scenarii from "./pages/Scenarii";
 import Contributors from "./pages/Contributors";
+import Modal from "./modals/Modal";
 
 const App = () => (
   <div className="App">
@@ -23,6 +24,7 @@ const App = () => (
       </Switch>
     </div>
     <Footer />
+    <Modal />
   </div>
 );
 
