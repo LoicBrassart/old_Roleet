@@ -5,6 +5,7 @@ const { Character } = require("../models/models");
 
 router.get("/", (req, res) => {
   let criteria = {};
+
   // Search by one specific field
   if (req.query.name) {
     criteria.name = req.query.name;
@@ -18,15 +19,24 @@ router.get("/", (req, res) => {
     };
   }
 
-  Character.find(criteria, (err, characters) => {
-    if (err) {
-      return res.status(500).send("Internal server error");
+  // Pagination
+  perPage = 20;
+  page = req.query.page || 1;
+
+  Character.find(
+    criteria,
+    {},
+    { skip: page * perPage, limit: perPage },
+    (err, characters) => {
+      if (err) {
+        return res.status(500).send("Internal server error");
+      }
+      if (!characters) {
+        return res.status(404).send("Characters not found");
+      }
+      return res.json(characters);
     }
-    if (!characters) {
-      return res.status(404).send("Characters not found");
-    }
-    return res.json(characters);
-  });
+  );
 });
 
 router.get("/:id", (req, res) => {
