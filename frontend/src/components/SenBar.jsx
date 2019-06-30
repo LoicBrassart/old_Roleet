@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
+import modalActions from "../redux/actions/modalActions";
 import userActions from "../redux/actions/userActions";
-import axios from "axios";
 import "./styles/SenBar.scss";
 
 class SenBar extends React.Component {
@@ -12,19 +12,6 @@ class SenBar extends React.Component {
       data: props.data,
       isLoggedIn: props.isLoggedIn
     };
-  }
-  login() {
-    axios
-      .post("http://localhost:5050/auth/login", {
-        email: "loic@spamland.com",
-        password: "toto"
-      })
-      .then(({ data }) => {
-        this.props.dispatch({ ...userActions.USER_LOGIN, ...data });
-      })
-      .catch(err => {
-        console.log(`An error occurred while logging in: ${err}`);
-      });
   }
 
   logout() {
@@ -46,7 +33,10 @@ class SenBar extends React.Component {
         ) : (
           <button
             onClick={() => {
-              this.login();
+              this.props.dispatch({
+                ...modalActions.MODAL_OPEN,
+                name: "login"
+              });
             }}
           >
             Login
