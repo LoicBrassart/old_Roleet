@@ -30,7 +30,7 @@ class SenBar extends React.Component {
               this.logout();
             }}
           >
-            Logout
+            Déconnexion
           </button>
         ) : (
           <button
@@ -41,7 +41,7 @@ class SenBar extends React.Component {
               });
             }}
           >
-            Login
+            Connexion
           </button>
         )}
       </nav>

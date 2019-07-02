@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import modalActions from "../redux/actions/modalActions";
 import Rodal from "rodal";
 import "rodal/lib/rodal.css";
+import SignupModal from "./SignupModal";
 import LoginModal from "./LoginModal";
 
 const Modal = ({ dispatch, isOpen, name }) => (
@@ -13,6 +14,7 @@ const Modal = ({ dispatch, isOpen, name }) => (
     }}
   >
     {name === "login" ? <LoginModal dispatch={dispatch} /> : null}
+    {name === "signup" ? <SignupModal dispatch={dispatch} /> : null}
   </Rodal>
 );
 

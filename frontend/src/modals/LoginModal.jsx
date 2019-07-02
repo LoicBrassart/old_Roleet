@@ -38,29 +38,41 @@ class LoginModal extends React.Component {
 
   render() {
     return (
-      <form
-        onSubmit={e => {
-          this.login(e);
-        }}
-      >
-        <input
-          type="email"
-          name="email"
-          value={this.state.email}
-          onChange={e => {
-            this.onChange(e);
+      <React.Fragment>
+        <button
+          onClick={() => {
+            this.props.dispatch({
+              ...modalActions.MODAL_OPEN,
+              name: "signup"
+            });
           }}
-        />
-        <input
-          type="password"
-          name="password"
-          value={this.state.password}
-          onChange={e => {
-            this.onChange(e);
+        >
+          Inscription
+        </button>
+        <form
+          onSubmit={e => {
+            this.login(e);
           }}
-        />
-        <input type="submit" value="Connexion" />
-      </form>
+        >
+          <input
+            type="email"
+            name="email"
+            value={this.state.email}
+            onChange={e => {
+              this.onChange(e);
+            }}
+          />
+          <input
+            type="password"
+            name="password"
+            value={this.state.password}
+            onChange={e => {
+              this.onChange(e);
+            }}
+          />
+          <input type="submit" value="Connexion" />
+        </form>
+      </React.Fragment>
     );
   }
 }
