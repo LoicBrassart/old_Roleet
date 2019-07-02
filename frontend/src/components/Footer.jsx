@@ -18,18 +18,30 @@ const Footer = () => (
         <h3>Liens utiles</h3>
         <ul>
           <li>
-            <a target="_blank" href="https://scenariotheque.org">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://scenariotheque.org"
+            >
               Scénariothèque
             </a>
           </li>
           <li>
-            <a target="_blank" href="https://www.aidedd.org/">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.aidedd.org/"
+            >
               AideDD
             </a>
           </li>
           <li>Cartes</li>
           <li>
-            <a target="_blank" href="https://roll20.net/">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://roll20.net/"
+            >
               Roll20
             </a>
           </li>
