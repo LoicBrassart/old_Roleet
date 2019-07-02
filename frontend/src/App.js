@@ -10,6 +10,8 @@ import Characters from "./pages/Characters";
 import Scenarii from "./pages/Scenarii";
 import Contributors from "./pages/Contributors";
 import Modal from "./modals/Modal";
+import NotificationsSystem from "reapop";
+import reapopTheme from "reapop-theme-wybo";
 
 const App = () => (
   <div className="App">
@@ -25,6 +27,7 @@ const App = () => (
     </div>
     <Footer />
     <Modal />
+    <NotificationsSystem theme={reapopTheme} />
   </div>
 );
 

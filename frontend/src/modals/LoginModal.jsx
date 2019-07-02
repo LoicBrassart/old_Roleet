@@ -1,14 +1,16 @@
 import React from "react";
+import { connect } from "react-redux";
+import { notify } from "reapop";
 import axios from "axios";
 import userActions from "../redux/actions/userActions";
 import modalActions from "../redux/actions/modalActions";
 
-export default class LoginModal extends React.Component {
+class LoginModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: null,
-      password: null
+      email: undefined,
+      password: undefined
     };
   }
 
@@ -20,7 +22,14 @@ export default class LoginModal extends React.Component {
 
   login(e) {
     e.preventDefault();
-
+    const { notify } = this.props;
+    notify({
+      title: "Connexion en cours",
+      message: "Attends une seconde stp...",
+      status: "info",
+      dismissible: false,
+      dismissAfter: 0
+    });
     axios
       .post("http://localhost:5050/auth/login", this.state)
       .then(({ data }) => {
@@ -60,3 +69,7 @@ export default class LoginModal extends React.Component {
     );
   }
 }
+export default connect(
+  null,
+  { notify }
+)(LoginModal);
