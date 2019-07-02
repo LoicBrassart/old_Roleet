@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import cogoToast from "cogo-toast";
 import modalActions from "../redux/actions/modalActions";
 import userActions from "../redux/actions/userActions";
 import "./styles/SenBar.scss";
@@ -16,6 +17,7 @@ class SenBar extends React.Component {
 
   logout() {
     this.props.dispatch(userActions.USER_LOGOUT);
+    cogoToast.success("Déconnecté", { position: "bottom-right" });
   }
 
   render() {
