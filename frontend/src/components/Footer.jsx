@@ -17,10 +17,22 @@ const Footer = () => (
       <div>
         <h3>Liens utiles</h3>
         <ul>
-          <li>Scenariothèque</li>
-          <li>AideDD</li>
+          <li>
+            <a target="_blank" href="https://scenariotheque.org">
+              Scénariothèque
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://www.aidedd.org/">
+              AideDD
+            </a>
+          </li>
           <li>Cartes</li>
-          <li>Roll20</li>
+          <li>
+            <a target="_blank" href="https://roll20.net/">
+              Roll20
+            </a>
+          </li>
         </ul>
       </div>
       <div>
