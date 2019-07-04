@@ -11,7 +11,7 @@ class Characters extends React.Component {
     this.state = {
       charactersData: [],
       api: {
-        page: 1,
+        page: 0,
         hasMore: true
       }
     };

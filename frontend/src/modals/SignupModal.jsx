@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import axios from "axios";
 import cogoToast from "cogo-toast";
-import userActions from "../redux/actions/userActions";
 import modalActions from "../redux/actions/modalActions";
 
 class SignupModal extends React.Component {
@@ -28,7 +27,6 @@ class SignupModal extends React.Component {
     axios
       .post("http://localhost:5050/auth/signup", this.state)
       .then(({ data }) => {
-        console.log(data);
         this.props.dispatch({ ...modalActions.MODAL_CLOSE });
         cogoToast.success(
           `Inscription réussie, ${data.pseudo}tu peux maintenant te connecter.`,
