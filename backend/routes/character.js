@@ -21,7 +21,7 @@ router.get("/", (req, res) => {
 
   // Pagination
   perPage = 20;
-  page = req.query.page || 1;
+  page = req.query.page || 0;
 
   Character.find(
     criteria,
