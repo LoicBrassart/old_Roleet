@@ -17,7 +17,13 @@ const ScenarioSchema = new Schema({
     required: true
   },
   readers: {
-    type: [ObjectId],
+    type: [
+      {
+        type: mongoose.ObjectId,
+        ref: "User",
+        required: true
+      }
+    ],
     default: []
   },
   created_at: {
