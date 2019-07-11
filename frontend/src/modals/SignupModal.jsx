@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import axios from "axios";
+import { api } from "../conf";
 import cogoToast from "cogo-toast";
 import modalActions from "../redux/actions/modalActions";
 
@@ -24,12 +24,12 @@ class SignupModal extends React.Component {
 
   signup(e) {
     e.preventDefault();
-    axios
-      .post("http://localhost:5050/auth/signup", this.state)
+    api
+      .post("/auth/signup", this.state)
       .then(({ data }) => {
         this.props.dispatch({ ...modalActions.MODAL_CLOSE });
         cogoToast.success(
-          `Inscription réussie, ${data.pseudo}tu peux maintenant te connecter.`,
+          `Bienvenue ${data.pseudo} tu peux maintenant te connecter.`,
           {
             position: "bottom-right"
           }
