@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import axios from "axios";
+import { api } from "../conf";
 import cogoToast from "cogo-toast";
 import userActions from "../redux/actions/userActions";
 import modalActions from "../redux/actions/modalActions";
@@ -22,8 +22,8 @@ class LoginModal extends React.Component {
 
   login(e) {
     e.preventDefault();
-    axios
-      .post("http://localhost:5050/auth/login", this.state)
+    api
+      .post("/auth/login", this.state)
       .then(({ data }) => {
         this.props.dispatch({ ...userActions.USER_LOGIN, ...data });
         this.props.dispatch({ ...modalActions.MODAL_CLOSE });

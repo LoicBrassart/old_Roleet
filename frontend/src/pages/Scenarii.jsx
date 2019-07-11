@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import axios from "axios";
+import { api } from "../conf";
 import "./styles/Scenarii.scss";
 import Title from "../components/Title";
 import Scenario from "../components/Scenario";
@@ -11,8 +11,8 @@ const Scenarii = ({ loggedUserData, isLoggedIn }) => {
 
   // Replaces componentDidMount and componentDidUpdate
   useEffect(() => {
-    axios
-      .get("http://localhost:5050/scenario")
+    api
+      .get("/scenario")
       .then(({ data }) => {
         setScenariiData(data);
       })

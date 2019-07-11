@@ -1,9 +1,9 @@
 import React from "react";
-import axios from "axios";
 import "./styles/Characters.scss";
 import Character from "../components/Character";
 import Title from "../components/Title";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { api } from "../conf";
 
 class Characters extends React.Component {
   constructor(props) {
@@ -21,8 +21,8 @@ class Characters extends React.Component {
   }
 
   fetchMoreCharacters() {
-    axios
-      .get(`http://localhost:5050/character?page=${this.state.api.page}`)
+    api
+      .get(`/character?page=${this.state.api.page}`)
       .then(({ data }) => {
         this.setState({
           charactersData: [...this.state.charactersData, ...data],
