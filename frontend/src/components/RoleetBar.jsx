@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles/RoleetBar.scss";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const RoleetBar = () => (
   <nav className="RoleetBar flexer">
@@ -30,7 +30,9 @@ const RoleetBar = () => (
         </NavLink>
       </li>
       <li className="center">
-        <img src="/img/user-avatar-default.png" alt="Mon compte Roleet" />
+        <Link to="/profile">
+          <img src="/img/user-avatar-default.png" alt="Mon compte Roleet" />
+        </Link>
       </li>
     </ul>
   </nav>
