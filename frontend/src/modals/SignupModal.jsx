@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { api } from "../conf";
 import cogoToast from "cogo-toast";
 import modalActions from "../redux/actions/modalActions";
+import userActions from "../redux/actions/userActions";
 
 class SignupModal extends React.Component {
   constructor(props) {
@@ -27,13 +28,11 @@ class SignupModal extends React.Component {
     api
       .post("/auth/signup", this.state)
       .then(({ data }) => {
+        cogoToast.success(`Bienvenue, ${data.user.pseudo} !.`, {
+          position: "bottom-right"
+        });
+        this.props.dispatch({ ...userActions.USER_LOGIN, ...data });
         this.props.dispatch({ ...modalActions.MODAL_CLOSE });
-        cogoToast.success(
-          `Bienvenue ${data.pseudo} tu peux maintenant te connecter.`,
-          {
-            position: "bottom-right"
-          }
-        );
       })
       .catch(() => {
         cogoToast.error("Une erreur est survenue lors de l'inscription", {

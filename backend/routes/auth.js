@@ -17,7 +17,11 @@ router.post("/signup", (req, res) => {
         console.error("Failure! " + err);
         return res.status(400).send("Invalid User creation request");
       }
-      return res.status(201).send(newUser);
+      newUser.password = undefined;
+      return res.status(201).send({
+        user: newUser,
+        token: jwt.sign(JSON.stringify(newUser), jwtSecret)
+      });
     });
   });
 });
