@@ -5,7 +5,8 @@ const ObjectId = mongoose.Schema.Types.ObjectId;
 const ScenarioSchema = new Schema({
   title: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   author: {
     type: mongoose.ObjectId,
@@ -14,7 +15,8 @@ const ScenarioSchema = new Schema({
   },
   summary: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   readers: {
     type: [

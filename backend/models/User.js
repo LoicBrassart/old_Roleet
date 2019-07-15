@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema({
   pseudo: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   avatar: {
     type: String,
@@ -16,7 +17,8 @@ const UserSchema = new Schema({
   },
   email: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   wants_email_notifications: {
     type: Boolean,
