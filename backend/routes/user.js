@@ -5,6 +5,8 @@ const { User } = require("../models/User");
 
 router.get("/", (req, res) => {
   let criteria = {};
+
+  // Search by one specific field
   if (req.query.name) {
     criteria.pseudo = req.query.name;
   }
