@@ -34,6 +34,38 @@
       font-weight: bold;
     }
   }
+  #search {
+    position: relative;
+
+    input {
+      height: 30px;
+      width: 300px;
+      text-indent: 25px;
+      background-color: #e5e5e5;
+      border: none;
+      border-radius: 10px;
+    }
+
+    ul {
+      position: absolute;
+      z-index: -5;
+      left: 0;
+      top: 25px;
+      width: 100%;
+      padding: 0;
+      padding-top: 15px;
+      color: black;
+      border-radius: 10px;
+      background-color: #e5e5e5;
+
+      li {
+        background-color: #e5e5e5;
+        margin: 0;
+        padding-left: 25px;
+      }
+    }
+  }
+
   ul {
     height: 100%;
     list-style: none;
@@ -48,6 +80,7 @@
       }
     }
   }
+
   a {
     color: white;
 
