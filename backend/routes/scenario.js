@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const passport = require("passport");
-const { Scenario } = require("../models/models");
+const { Scenario } = require("../models");
 
 router.get("/", (req, res) => {
   let criteria = {};
