@@ -1,5 +1,5 @@
 const { db } = require("../conf");
-const { Character, User, Scenario } = require("../models/models");
+const { Character, User, Scenario } = require("../models");
 
 let data;
 
