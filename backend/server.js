@@ -22,8 +22,7 @@ app.use("/auth", require("./routes/auth"));
 app.use("/character", require("./routes/character"));
 app.use("/scenario", require("./routes/scenario"));
 app.use("/user", require("./routes/user"));
-
-/* --------------------------------------------------------------------- Private Routes */
+app.use("/", require("./routes/misc"));
 
 /* --------------------------------------------------------------------- 404 and server launch */
 app.use((req, res, next) => {

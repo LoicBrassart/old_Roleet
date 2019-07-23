@@ -1,10 +1,23 @@
 const express = require("express");
 const router = express.Router();
 const passport = require("passport");
-const { Scenario } = require("../models/models");
+const { Scenario } = require("../models");
 
 router.get("/", (req, res) => {
   let criteria = {};
+
+  // Search by one specific field
+  if (req.query.title) {
+    criteria.title = req.query.title;
+  }
+
+  // Search everywhere
+  if (req.query.search) {
+    let search = req.query.search;
+    criteria = {
+      $or: [{ title: { $regex: search } }]
+    };
+  }
 
   Scenario.find(criteria, (err, scenarii) => {
     if (err) {

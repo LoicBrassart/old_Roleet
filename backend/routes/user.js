@@ -1,10 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const passport = require("passport");
-const { User } = require("../models/User");
+const { User } = require("../models");
 
 router.get("/", (req, res) => {
   let criteria = {};
+
+  // Search by one specific field
   if (req.query.name) {
     criteria.pseudo = req.query.name;
   }

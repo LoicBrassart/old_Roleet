@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const passport = require("passport");
-const { Character } = require("../models/models");
+const { Character } = require("../models");
 
 router.get("/", (req, res) => {
   let criteria = {};
@@ -20,7 +20,7 @@ router.get("/", (req, res) => {
   }
 
   // Pagination
-  perPage = 20;
+  perPage = 10;
   page = req.query.page || 0;
 
   Character.find(
