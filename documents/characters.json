@@ -3,7 +3,7 @@
     "name": "Sylvanas Windrunner",
     "avatar": "https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fkalimdor.files.wordpress.com%2F2013%2F01%2Fsylvanas_chenbo.jpg&f=1",
     "baseline": "... No turning back.",
-    "tags": ["Horde", "Undead", "Main Character"],
+    "tags": ["horde", "undead", "main character"],
     "fluffs": [
       {
         "title": "Background",
@@ -21,7 +21,7 @@
     "name": "Thrall",
     "avatar": "https://vignette.wikia.nocookie.net/wow/images/b/b9/Thrall_WarCraft_.jpg/revision/latest?cb=20141020005607&path-prefix=fr",
     "baseline": "Only true leader of the Horde. Lorem ipsum dolor sit amet, non conequitur blablabla bla.",
-    "tags": ["Horde", "Orc", "Main Character"],
+    "tags": ["horde", "orc", "main character"],
     "fluffs": [
       {
         "title": "Background",
@@ -51,7 +51,7 @@
     "name": "Scene",
     "avatar": "https://i.redd.it/fgqefj3vw1921.jpg",
     "baseline": "In a few decades, you'll be nothing but a bit of dust, while I'll be celebrated as a legend.",
-    "tags": ["Tiefling", "Bard", "Warrior"],
+    "tags": ["tiefling", "bard", "warrior"],
     "fluffs": [
       {
         "title": "Background",
@@ -81,7 +81,7 @@
     "name": "Laekh",
     "avatar": "https://i.pinimg.com/236x/63/80/f3/6380f3499a85eb88e371a757f1e7c1f6.jpg",
     "baseline": "ROOAAARRRR !!!!!! FOR KROM !!!",
-    "tags": ["Dwarf", "Berserker"],
+    "tags": ["dwarf", "berserker"],
     "fluffs": [
       {
         "title": "Background",
@@ -111,7 +111,7 @@
     "name": "Vol'Jin",
     "avatar": "https://vignette.wikia.nocookie.net/wowwiki/images/5/56/Vol_jin_by_rinacane-d7vdj8i.jpg/revision/latest?cb=20150502181804",
     "baseline": "Then, my friend, let the songs be sung as Zandalari lamentations. Let them be sung for a thousand generations and serenade us into eternity.",
-    "tags": ["Troll", "Hunter"],
+    "tags": ["troll", "hunter"],
     "fluffs": [
       {
         "title": "Fate",
@@ -147,7 +147,7 @@
     "name": "Valeera Sanguinar",
     "avatar": "https://gamepedia.cursecdn.com/wowpedia/7/75/Valeera_HoW.png",
     "baseline": "Respect my people, or pay the price!",
-    "tags": ["Blood Elf", "Thief", "Horde"],
+    "tags": ["blood elf", "thief", "horde"],
     "fluffs": [
       {
         "title": "Trivia",
