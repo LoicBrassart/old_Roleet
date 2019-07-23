@@ -1,6 +1,8 @@
 import React from "react";
 import cogoToast from "cogo-toast";
+import { Link } from "react-router-dom";
 import { api } from "../conf";
+import "./styles/Search.scss";
 
 const initialState = {
   needle: "",
@@ -8,6 +10,14 @@ const initialState = {
   scenarii: [],
   users: []
 };
+
+const NoResult = () => (
+  <div className="NoResult">
+    <h5>ಠ_ಠ</h5>
+    <p>Désolé, on a rien trouvé !</p>
+  </div>
+);
+
 class Search extends React.Component {
   constructor(props) {
     super(props);
@@ -40,8 +50,9 @@ class Search extends React.Component {
   }
 
   render() {
+    const display = this.state.needle.length > 0 ? "" : "hidden";
     return (
-      <React.Fragment>
+      <div className="Search">
         <input
           placeholder="Roliste, Scenario, Personnage, ..."
           value={this.state.needle}
@@ -49,14 +60,57 @@ class Search extends React.Component {
             this.onChangeNeedle(e);
           }}
         />
-        <div>
-          Resultats:{" "}
-          {`
-          ${this.state.characters.length}C + 
-          ${this.state.users.length}U + 
-          ${this.state.scenarii.length}S`}
+        <div className={`searchResults ${display}`}>
+          <section>
+            <h4>Personnages</h4>
+            {this.state.characters.length > 0 ? (
+              <ul>
+                {this.state.characters.map((char, idx) => {
+                  return (
+                    <li key={idx}>
+                      <Link to={`/character/${char._id}`}>{char.name}</Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : (
+              <NoResult />
+            )}
+          </section>
+          <section>
+            <h4>Rolistes</h4>
+            {this.state.users.length > 0 ? (
+              <ul>
+                {this.state.users.map((user, idx) => {
+                  return (
+                    <li key={idx}>
+                      <Link to={`/profile/${user._id}`}>{user.pseudo}</Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : (
+              <NoResult />
+            )}
+          </section>
+          <section>
+            <h4>Scenarii</h4>
+            {this.state.scenarii.length > 0 ? (
+              <ul>
+                {this.state.scenarii.map((scen, idx) => {
+                  return (
+                    <li key={idx}>
+                      <Link to={`/scenario/${scen._id}`}>{scen.title}</Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : (
+              <NoResult />
+            )}
+          </section>
         </div>
-      </React.Fragment>
+      </div>
     );
   }
 }
