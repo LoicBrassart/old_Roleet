@@ -4,10 +4,10 @@ const { User, Character, Scenario } = require("../models");
 
 router.get("/search", (req, res) => {
   let criteria;
-  if (!req.query.needle) {
+  const needle = req.query.needle.trim().toLowerCase();
+  if (!needle) {
     return res.status(404).send("No needle, no haystack!");
   }
-  const needle = req.query.needle.trim().toLowerCase();
 
   const fetchUsers = new Promise((resolve, reject) => {
     criteria = {

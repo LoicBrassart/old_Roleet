@@ -24,7 +24,6 @@ const initialState = {
   scenarii: [],
   users: []
 };
-
 class Search extends React.Component {
   constructor(props) {
     super(props);
@@ -32,8 +31,9 @@ class Search extends React.Component {
   }
 
   onChangeNeedle(e) {
-    const needle = e.target.value;
+    let needle = e.target.value;
     this.setState({ needle });
+    needle = needle.trim().toLowerCase();
 
     if (!needle.length) {
       this.setState(initialState);
