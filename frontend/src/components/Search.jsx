@@ -4,19 +4,26 @@ import { Link } from "react-router-dom";
 import { api } from "../conf";
 import "./styles/Search.scss";
 
+const icons = ["ಠ_ಠ", "( ͠° ͟ʖ ͡°)", "(v°_°v)", "¬_¬", "(；⌣̀_⌣́)"];
+const NoResult = () => {
+  const numIcon = Math.floor(Math.random() * icons.length);
+  return (
+    <div className="NoResult">
+      <h5>{icons[numIcon]}</h5>
+      <p>
+        Désolé, on a <br />
+        rien trouvé !
+      </p>
+    </div>
+  );
+};
+
 const initialState = {
   needle: "",
   characters: [],
   scenarii: [],
   users: []
 };
-
-const NoResult = () => (
-  <div className="NoResult">
-    <h5>ಠ_ಠ</h5>
-    <p>Désolé, on a rien trouvé !</p>
-  </div>
-);
 
 class Search extends React.Component {
   constructor(props) {
