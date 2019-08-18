@@ -75,8 +75,7 @@
     margin: 20px 0;
   }
 
-  a,
-  a:visited {
+  span {
     color: dimgrey;
     text-decoration: none;
   }
@@ -134,7 +133,7 @@
     left: 30px;
   }
 
-  article aside a {
+  article aside span {
     display: block;
     color: dimgrey;
     background-color: rgba(169, 169, 169, 0.32);

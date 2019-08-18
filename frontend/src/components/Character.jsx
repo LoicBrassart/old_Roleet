@@ -55,7 +55,7 @@ class Character extends React.Component {
           <p>{char.baseline}</p>
           <aside>
             {char.tags.map((tag, i) => {
-              return <a key={i}>{tag}</a>;
+              return <span key={i}>{tag}</span>;
             })}
           </aside>
         </article>
