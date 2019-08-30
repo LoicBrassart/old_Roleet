@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Switch, Route, Redirect } from "react-router-dom";
 import "semantic-ui-css/semantic.min.css";
 import "./App.scss";
@@ -11,14 +12,14 @@ import MyProfile from "./pages/MyProfile";
 import Characters from "./pages/Characters";
 import Scenarii from "./pages/Scenarii";
 import Contributors from "./pages/Contributors";
+import EditCharacter from "./pages/EditCharacter";
 import Modal from "./modals/Modal";
-import { connect } from "react-redux";
 
 const PrivateRoute = ({ component: Component, user, ...rest }) => (
   <Route
     {...rest}
     render={props =>
-      user.user.isLoggedIn ? (
+      user && user.user.isLoggedIn ? (
         <Component {...props} />
       ) : (
         <Redirect
@@ -39,6 +40,7 @@ const App = user => (
     <div className="content">
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/newChar" component={EditCharacter} />
         <Route exact path="/characters" component={Characters} />
         <Route exact path="/scenarii" component={Scenarii} />
         <Route exact path="/contributors" component={Contributors} />
