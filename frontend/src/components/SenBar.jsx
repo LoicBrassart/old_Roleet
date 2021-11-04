@@ -1,9 +1,6 @@
-import React from "react";
-import { connect } from "react-redux";
-import cogoToast from "cogo-toast";
-import modalActions from "../redux/actions/modalActions";
-import userActions from "../redux/actions/userActions";
-import "./styles/SenBar.scss";
+import React from 'react';
+import cogoToast from 'cogo-toast';
+import SSenBar from './styles/SenBar';
 
 class SenBar extends React.Component {
   constructor(props) {
@@ -11,18 +8,18 @@ class SenBar extends React.Component {
     this.state = {
       token: props.token,
       data: props.data,
-      isLoggedIn: props.isLoggedIn
+      isLoggedIn: props.isLoggedIn,
     };
   }
 
   logout() {
-    this.props.dispatch(userActions.USER_LOGOUT);
-    cogoToast.success("Déconnecté", { position: "bottom-right" });
+    //this.props.dispatch(userActions.USER_LOGOUT);
+    cogoToast.success('Déconnecté', { position: 'bottom-right' });
   }
 
   render() {
     return (
-      <nav className="SenBar flexer">
+      <SSenBar className='SenBar flexer'>
         <div>Senvisage</div>
         {this.props.isLoggedIn ? (
           <button
@@ -34,23 +31,18 @@ class SenBar extends React.Component {
           </button>
         ) : (
           <button
-            onClick={() => {
-              this.props.dispatch({
-                ...modalActions.MODAL_OPEN,
-                name: "login"
-              });
-            }}
+          // onClick={() => {
+          //   this.props.dispatch({
+          //     ...modalActions.MODAL_OPEN,
+          //     name: 'login',
+          //   });
+          // }}
           >
             Connexion
           </button>
         )}
-      </nav>
+      </SSenBar>
     );
   }
 }
-const mapStateToProps = store => ({
-  token: store.user.token,
-  data: store.user.data,
-  isLoggedIn: store.user.isLoggedIn
-});
-export default connect(mapStateToProps)(SenBar);
+export default SenBar;

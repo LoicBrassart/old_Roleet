@@ -1,8 +1,7 @@
-import React from "react";
-import "./styles/Home.scss";
+import React from 'react';
 
 const MyProfile = () => (
-  <div className="Home">
+  <div className='Home'>
     <p>Maison, sucrée maison !!</p>
   </div>
 );

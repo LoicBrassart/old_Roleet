@@ -1,0 +1,152 @@
+import styled from 'styled-components';
+
+const SCharacter = styled.section`
+  &.Character {
+    width: 450px;
+    height: 600px;
+    margin: 15px;
+    border: 1px solid white;
+    border-radius: 4px;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+    color: black;
+
+    &:hover > aside {
+      right: 0;
+    }
+
+    > article {
+      padding: 30px;
+    }
+
+    > aside {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      padding: 20px 20px 40px;
+      background-color: transparent;
+      top: 0;
+      right: -100%;
+      z-index: 1;
+      transition: right 0.4s;
+    }
+
+    > aside nav {
+      width: 100%;
+      display: flex;
+    }
+
+    > aside nav button {
+      display: block;
+      padding: 16px 10px;
+      cursor: pointer;
+      border: none;
+      position: relative;
+      z-index: 1;
+      border-radius: 4px 4px 0 0;
+      color: black;
+      font-family: 'Coda', cursive;
+      font-weight: 400;
+      transition: border 0.4s, background-color 0.4s;
+      background-color: rgba(255, 255, 255, 0.52);
+    }
+
+    > aside nav button span {
+      position: absolute;
+      display: block;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      width: 0;
+      background-color: rgba(255, 255, 255, 0.91);
+      transition: bottom 0.4s, width 0.4s;
+    }
+
+    > aside article {
+      display: none;
+      border: 1px solid lightgray;
+      border-radius: 0 4px 4px 4px;
+      overflow: auto;
+      height: calc(100% - 50px);
+      position: relative;
+      background-color: rgba(255, 255, 255, 0.91);
+      padding: 0 15px 10px;
+    }
+
+    > aside article h3 {
+      margin: 20px 0;
+    }
+
+    span {
+      color: dimgrey;
+      text-decoration: none;
+    }
+
+    h2,
+    h3 {
+      font-size: 30px;
+      margin: 20px 0;
+      font-family: 'Coda', cursive;
+      font-weight: 400;
+    }
+
+    button {
+      border: none;
+      background-color: transparent;
+    }
+
+    /*class*/
+    .buttonSelected {
+      border: 1px solid lightgray !important;
+      border-bottom: none !important;
+      background-color: rgba(255, 255, 255, 0.91) !important;
+    }
+
+    .buttonSelected span {
+      bottom: -1px !important;
+      width: 100% !important;
+    }
+
+    .articleSelected {
+      display: block !important;
+    }
+
+    img {
+      display: block;
+      height: 50%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+    }
+
+    article p {
+      font-size: 18px;
+      font-family: 'Coda', cursive;
+      font-weight: 400;
+    }
+
+    article aside {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      position: absolute;
+      width: calc(100% - 60px);
+      bottom: 30px;
+      left: 30px;
+    }
+
+    article aside span {
+      display: block;
+      color: dimgrey;
+      background-color: rgba(169, 169, 169, 0.32);
+      font-size: 15px;
+      padding: 5px 9px;
+      margin: 7px auto;
+      border-radius: 5px;
+      font-family: 'Coda', cursive;
+      font-weight: 800;
+    }
+  }
+`;
+export default SCharacter;

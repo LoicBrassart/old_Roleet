@@ -1,9 +1,9 @@
-import React from "react";
-import "./styles/Characters.scss";
-import Character from "../components/Character";
-import Title from "../components/Title";
-import InfiniteScroll from "react-infinite-scroll-component";
-import { api } from "../conf";
+import React from 'react';
+import Character from '../components/Character';
+import Title from '../components/Title';
+import InfiniteScroll from 'react-infinite-scroll-component';
+import { api } from '../conf';
+import characters from '../mock/characters.json';
 
 class Characters extends React.Component {
   constructor(props) {
@@ -12,12 +12,14 @@ class Characters extends React.Component {
       charactersData: [],
       api: {
         page: 0,
-        hasMore: true
-      }
+        hasMore: true,
+      },
     };
   }
   componentDidMount() {
-    this.fetchMoreCharacters();
+    //this.fetchMoreCharacters();
+    console.log(characters);
+    this.setState({ ...this.state, charactersData: characters });
   }
 
   fetchMoreCharacters() {
@@ -28,19 +30,19 @@ class Characters extends React.Component {
           charactersData: [...this.state.charactersData, ...data],
           api: {
             page: parseInt(this.state.api.page) + 1,
-            hasMore: data.length > 0
-          }
+            hasMore: data.length > 0,
+          },
         });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log("couldn't fetch: " + err);
       });
   }
 
   render() {
     return (
-      <div className="Characters">
-        <Title label="Personnages" />
+      <div className='Characters'>
+        <Title label='Personnages' />
         <InfiniteScroll
           dataLength={this.state.charactersData.length}
           next={() => {
@@ -49,7 +51,7 @@ class Characters extends React.Component {
           hasMore={this.state.api.hasMore}
           loader={<h4>Une minute stp...</h4>}
           endMessage={
-            <p style={{ textAlign: "center" }}>
+            <p style={{ textAlign: 'center' }}>
               <b>
                 Désolé... C'est un peu gênant, mais on n'a plus aucun perso à te
                 proposer !

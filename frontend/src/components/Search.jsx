@@ -1,14 +1,14 @@
-import React from "react";
-import cogoToast from "cogo-toast";
-import { Link } from "react-router-dom";
-import { api } from "../conf";
-import "./styles/Search.scss";
+import React from 'react';
+import cogoToast from 'cogo-toast';
+import { Link } from 'react-router-dom';
+import { api } from '../conf';
+import SSearch from './styles/Search';
 
-const icons = ["ಠ_ಠ", "( ͠° ͟ʖ ͡°)", "(v°_°v)", "¬_¬", "(；⌣̀_⌣́)"];
+const icons = ['ಠ_ಠ', '( ͠° ͟ʖ ͡°)', '(v°_°v)', '¬_¬', '(；⌣̀_⌣́)'];
 const NoResult = () => {
   const numIcon = Math.floor(Math.random() * icons.length);
   return (
-    <div className="NoResult">
+    <div className='NoResult'>
       <h5>{icons[numIcon]}</h5>
       <p>
         Désolé, on a <br />
@@ -19,10 +19,10 @@ const NoResult = () => {
 };
 
 const initialState = {
-  needle: "",
+  needle: '',
   characters: [],
   scenarii: [],
-  users: []
+  users: [],
 };
 class Search extends React.Component {
   constructor(props) {
@@ -44,26 +44,26 @@ class Search extends React.Component {
           this.setState({
             characters: data.characters || [],
             users: data.users || [],
-            scenarii: data.scenarii || []
+            scenarii: data.scenarii || [],
           });
         })
-        .catch(err => {
+        .catch((err) => {
           cogoToast.error(
             `Une erreur est survenue lors de la récupération: ${err}`,
-            { position: "bottom-right" }
+            { position: 'bottom-right' }
           );
         });
     }
   }
 
   render() {
-    const display = this.state.needle.length > 0 ? "" : "hidden";
+    const display = this.state.needle.length > 0 ? '' : 'hidden';
     return (
-      <div className="Search">
+      <SSearch className='Search'>
         <input
-          placeholder="Roliste, Scenario, Personnage, ..."
+          placeholder='Roliste, Scenario, Personnage, ...'
           value={this.state.needle}
-          onChange={e => {
+          onChange={(e) => {
             this.onChangeNeedle(e);
           }}
         />
@@ -117,7 +117,7 @@ class Search extends React.Component {
             )}
           </section>
         </div>
-      </div>
+      </SSearch>
     );
   }
 }

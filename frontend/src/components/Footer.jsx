@@ -1,9 +1,9 @@
-import React from "react";
-import "./styles/Footer.scss";
-import { Link } from "react-router-dom";
+import React from 'react';
+import SFooter from './styles/Footer';
+import { Link } from 'react-router-dom';
 
 const Footer = () => (
-  <footer className="Footer">
+  <SFooter className='Footer'>
     <nav>
       <div>
         <h3>Explorer</h3>
@@ -19,18 +19,18 @@ const Footer = () => (
         <ul>
           <li>
             <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://scenariotheque.org"
+              target='_blank'
+              rel='noopener noreferrer'
+              href='https://scenariotheque.org'
             >
               Scénariothèque
             </a>
           </li>
           <li>
             <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.aidedd.org/"
+              target='_blank'
+              rel='noopener noreferrer'
+              href='https://www.aidedd.org/'
             >
               AideDD
             </a>
@@ -38,9 +38,9 @@ const Footer = () => (
           <li>Cartes</li>
           <li>
             <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://roll20.net/"
+              target='_blank'
+              rel='noopener noreferrer'
+              href='https://roll20.net/'
             >
               Roll20
             </a>
@@ -53,13 +53,13 @@ const Footer = () => (
           <li>Nous contacter</li>
           <li>Mentions légales</li>
           <li>
-            <Link to="/contributors">Contributeurs</Link>
+            <Link to='/contributors'>Contributeurs</Link>
           </li>
         </ul>
       </div>
     </nav>
     <p>Copyright 2019 - Tous droits réservés</p>
-  </footer>
+  </SFooter>
 );
 
 export default Footer;

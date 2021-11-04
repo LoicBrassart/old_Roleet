@@ -1,0 +1,30 @@
+[
+  {
+    "_id": "5ce422a27cb10713d71ed9c0",
+    "pseudo": "Loïc",
+    "password": "$2b$10$ybUGXE91LnhqmAs82M2sBO9X3Q.TsdRiBuqHcm6P1bu26jQdbrrDO",
+    "email": "loic@spamland.com",
+    "wants_email_notifications": false
+  },
+  {
+    "_id": "5ce422c57cb10713d71ed9c1",
+    "pseudo": "Antoine",
+    "password": "$2b$10$ybUGXE91LnhqmAs82M2sBO9X3Q.TsdRiBuqHcm6P1bu26jQdbrrDO",
+    "email": "antoine@spamland.com",
+    "wants_email_notifications": true
+  },
+  {
+    "_id": "5ce422de7cb10713d71ed9c2",
+    "pseudo": "Christine",
+    "password": "$2b$10$ybUGXE91LnhqmAs82M2sBO9X3Q.TsdRiBuqHcm6P1bu26jQdbrrDO",
+    "email": "christine@spamland.com",
+    "wants_email_notifications": false
+  },
+  {
+    "_id": "5ce422f67cb10713d71ed9c3",
+    "pseudo": "BenJ",
+    "password": "$2b$10$ybUGXE91LnhqmAs82M2sBO9X3Q.TsdRiBuqHcm6P1bu26jQdbrrDO",
+    "email": "benj@spamland.com",
+    "wants_email_notifications": true
+  }
+]

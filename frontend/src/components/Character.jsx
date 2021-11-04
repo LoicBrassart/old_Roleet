@@ -1,10 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import "./styles/Character.scss";
+import SCharacter from './styles/Character';
 
 const FluffsTab = ({ fluffs }) => (
-  <article className="descriptionArticle articleSelected">
+  <article className='descriptionArticle articleSelected'>
     {fluffs.map((fluff, i) => {
       return (
         <React.Fragment key={i}>
@@ -17,12 +17,12 @@ const FluffsTab = ({ fluffs }) => (
 );
 
 const SheetsTab = ({ sheets }) => (
-  <article className="sheetsArticle articleSelected">
+  <article className='sheetsArticle articleSelected'>
     <ul>
       {sheets.map((sheet, i) => {
         return (
           <li key={i}>
-            <Link to="/">{sheet.gameSystem}</Link>
+            <Link to='/'>{sheet.gameSystem}</Link>
           </li>
         );
       })}
@@ -34,13 +34,13 @@ class Character extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentTab: "fluffs"
+      currentTab: 'fluffs',
     };
   }
 
-  changeTab = newTab => {
+  changeTab = (newTab) => {
     this.setState({
-      currentTab: newTab
+      currentTab: newTab,
     });
   };
 
@@ -48,7 +48,7 @@ class Character extends React.Component {
     const char = this.props.charData;
 
     return (
-      <section className="Character">
+      <SCharacter className='Character'>
         <img src={char.avatar} alt={char.name} />
         <article>
           <h2>{char.name}</h2>
@@ -63,36 +63,36 @@ class Character extends React.Component {
         <aside>
           <nav>
             <button
-              type="button"
+              type='button'
               className={`${
-                this.state.currentTab === "fluffs" ? "buttonSelected" : ""
+                this.state.currentTab === 'fluffs' ? 'buttonSelected' : ''
               } descriptionButton cardButton`}
               onClick={() => {
-                this.changeTab("fluffs");
+                this.changeTab('fluffs');
               }}
             >
               Description
             </button>
             <button
-              type="button"
+              type='button'
               className={`${
-                this.state.currentTab === "sheets" ? "buttonSelected" : ""
+                this.state.currentTab === 'sheets' ? 'buttonSelected' : ''
               } sheetsButton cardButton`}
               onClick={() => {
-                this.changeTab("sheets");
+                this.changeTab('sheets');
               }}
             >
               Sheets
             </button>
           </nav>
 
-          {this.state.currentTab === "fluffs" ? (
+          {this.state.currentTab === 'fluffs' ? (
             <FluffsTab fluffs={char.fluffs} />
           ) : (
             <SheetsTab sheets={char.characterSheets} />
           )}
         </aside>
-      </section>
+      </SCharacter>
     );
   }
 }

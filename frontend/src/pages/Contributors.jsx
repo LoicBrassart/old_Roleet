@@ -1,10 +1,9 @@
-import React from "react";
-import "./styles/Contributors.scss";
-import Title from "../components/Title";
+import React from 'react';
+import Title from '../components/Title';
 
 const Contributors = () => (
-  <div className="Contributors">
-    <Title label="Contributors" />
+  <div className='Contributors'>
+    <Title label='Contributors' />
     <ul>
       <li>
         <p>Sabine Robard</p>

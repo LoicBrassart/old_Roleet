@@ -1,9 +1,9 @@
-import React from "react";
-import "./styles/Scenario.scss";
+import React from 'react';
+import SScenario from './styles/Scenario';
 
 const Scenario = ({ scenData: { title, summary, created_at }, locked }) => {
   return (
-    <div className="Scenario">
+    <SScenario className='Scenario'>
       <header>
         <div>
           <h2>{title}</h2>
@@ -12,7 +12,7 @@ const Scenario = ({ scenData: { title, summary, created_at }, locked }) => {
         <button disabled={locked}>Lire</button>
       </header>
       <p>{summary}</p>
-    </div>
+    </SScenario>
   );
 };
 export default Scenario;
